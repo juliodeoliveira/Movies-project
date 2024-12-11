@@ -33,7 +33,6 @@ export const Home = ({ navigation }) => {
         } else {
             console.log("Wheel of time naossss encontrado!");
         }
-
     }
 
     return (
@@ -55,7 +54,7 @@ export const Home = ({ navigation }) => {
                 <Text style={styles.title}>Continue Watching</Text> 
                 <FlatList 
                     data={watchHistory} 
-                    keyExtractor={(item) => item.id}
+                    // keyExtractor={(item) => item.id}
                     renderItem={({item}) => {
                         return <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>
                     }}
