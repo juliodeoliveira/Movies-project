@@ -22,7 +22,6 @@ export const MovieCards = (props) => {
     );
 };
 
-// style={{ width: 200, height: 300, marginBottom: 10 }}
 const styles = StyleSheet.create({
     image: {
         marginRight: 20,

@@ -15,45 +15,6 @@ export const Search = ({ navigation }) => {
         setError(error);
     }
 
-    // const searchMovie = async (query) => {
-    //     setMovie(''); 
-    //     setError('');
-
-    //     const API_KEY = '9fb417';
-    //     try {
-    //         const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${query}`);
-    //         const data = await response.json()
-    //         if (data.Response === 'True') {
-    //             setMovie(data);
-    //             console.log(movie.Poster);
-    //         } else {
-    //             setError("Filme não encontrado!");
-    //         }
-    //     } catch (err) {
-    //         setError('Erro ao buscar os dados!');
-    //         console.log(err);
-    //     }
-    // }
-
-    // const moviePage = () => {
-    //     Alert.alert(
-    //         'Aviso!',
-    //         'Esse botao deve levar o usuario para a pagina do filme!',
-    //         [
-    //           {
-    //             text: 'Cancelar',
-    //             onPress: () => console.log('Cancelar pressionado'),
-    //             style: 'cancel', // Estilo do botão Cancelar
-    //           },
-    //           {
-    //             text: 'OK',
-    //             onPress: () => console.log('OK pressionado'),
-    //           },
-    //         ],
-    //         { cancelable: true } // Não fecha a caixa de diálogo clicando fora dela
-    //     );    
-    // }
-
     return (
         <View style={styles.body}>
             <Text style={styles.text}>Tela de pesquisa de filmes/series</Text>

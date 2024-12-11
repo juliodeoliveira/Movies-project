@@ -16,8 +16,7 @@ const { width } = Dimensions.get('window');
 
 export const Home = ({ navigation }) => {
     const { moviesWatching } = useContext(WatchingContext);
-    
-    // console.log(moviesWatching);
+    const watchHistory = [...moviesWatching].reverse();
         
     var imagem;
     if (width > 412) {
@@ -55,7 +54,7 @@ export const Home = ({ navigation }) => {
 
                 <Text style={styles.title}>Continue Watching</Text> 
                 <FlatList 
-                    data={moviesWatching} 
+                    data={watchHistory} 
                     keyExtractor={(item) => item.id}
                     renderItem={({item}) => {
                         return <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>

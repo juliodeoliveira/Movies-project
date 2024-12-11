@@ -7,8 +7,15 @@ export const MoviePage = ({ route, navigation }) => {
 
     const { moviesWatching, addMovie } = useContext(WatchingContext);
     
-    // TODO: Validar se ja existe um filme com esse nome ou com mesma URL se sim, nao deixa adicionar no continuewatching
     useEffect(() => {
+
+        for (let i = 0; i < moviesWatching.length; i++) {
+            if (moviesWatching[i].name == Title) {
+                console.log("Filme já adicionado no histórico!");
+                return;
+            }
+        }
+        
         addMovie({
             id: String(moviesWatching.length + 1),
             name: Title,
