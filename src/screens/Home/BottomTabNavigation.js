@@ -8,6 +8,8 @@ import { MoviePage } from "../Search/moviePage";
 import { Settigs } from "../Settings/Settings";
 import { Search } from "../Search/Search";
 
+import MovieProvider from "../../context/continueWatching";
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -61,18 +63,18 @@ function MyTabs() {
 export default function BottomTabNavigator() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-
-                {/* Abas como parte do Stack Navigator */}
-                <Stack.Screen
-                    name="MyTabs"
-                    component={MyTabs}
-                    options={{ headerShown: false }}
-                />
-
-                {/* Tela Fora das Abas */}
-                <Stack.Screen name="MoviePage" component={MoviePage} options={{ headerShown: false }}/>
-            </Stack.Navigator>
+            <MovieProvider>
+                <Stack.Navigator>
+                    {/* Abas como parte do Stack Navigator */}
+                    <Stack.Screen
+                        name="MyTabs"
+                        component={MyTabs}
+                        options={{ headerShown: false }}
+                    />
+                    {/* Tela Fora das Abas */}
+                    <Stack.Screen name="MoviePage" component={MoviePage} options={{ headerShown: false }}/>
+                </Stack.Navigator>
+            </MovieProvider>
         </NavigationContainer>
     );
 }

@@ -3,11 +3,10 @@ import { Image, StyleSheet, View, ScrollView, Animated } from 'react-native';
 import BottomTabNavigator from './src/screens/Home/BottomTabNavigation';
 import AmazonLogo from "./src/assets/amazon_logo.png";
 import PrimeVideoLogo from "./src/assets/prime_video.png";
+import MovieProvider from './src/context/continueWatching';
 
 export default function App() {
   //ToastAndroid.show("Deu certo ein kk", ToastAndroid.SHORT);
-  
-
   return (
     <>
     {/* Importante para deixar a logo do prime sem nenhuma borda branca aparecendo */}

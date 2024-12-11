@@ -2,13 +2,12 @@ export var MOVIESWATCHING = [
   {
     id: "1",
     name: "Wheel Of Time",
-    moviesURL: require("../assets/movies/wheel_of_time.png"),
+    moviesURL: "https://m.media-amazon.com/images/M/MV5BMTc3NzUwODc0MF5BMl5BanBnXkFtZTcwNjMwMDEzMQ@@._V1_SX300.jpg",
   },
 
   {
     id: "2",
     name: "Inception",
-    moviesURL: require("../assets/movies/inception.png"),
+    moviesURL: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
   },
-
 ];

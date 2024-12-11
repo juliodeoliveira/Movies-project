@@ -1,8 +1,6 @@
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, FlatList, ScrollView } from "react-native";
 // import TrendingMovie from "./Sem título.jpeg";
 
-// TODO: Lá no utils, criar outro arquivo js para guardar os tv shows mais assistidos, POPULARES E CATEGORIAS (EM ANDAMENTO)
-
 import { TVSHOWSWATCHING } from "../../utils/tvshows/tvshowsWatching";
 import { TVSHOWSPOPULARS } from "../../utils/tvshows/tvshowsPopular";
 
@@ -39,6 +37,7 @@ export const TvShows = ({ navigation }) => {
                     />
                 </TouchableOpacity>
 
+                {/* Adicionar aqui uma validacao ou outra logica daquela dos filmes ou até mesmo usar os mesmos filmes */}
                 <Text style={styles.title}>Continuar Assistido</Text>
                 <FlatList
                     data={TVSHOWSWATCHING}
@@ -61,6 +60,7 @@ export const TvShows = ({ navigation }) => {
 
 
                 <Text style={styles.title}>Categorias</Text>
+                
                 <Category />
             </View>
 

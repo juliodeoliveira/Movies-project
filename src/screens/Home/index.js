@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView, Dimensions } from "react-native";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import TrendingMovie from "../../assets/movies/the_wheel_of_time.png";
 import bigTrendingMovie from "../../assets/movies/bigTime.jpg";
 import { searchMovie } from "../../utils/searchMovies";
 
+import { WatchingContext } from "./../../../src/context/continueWatching";
 
 import { MOVIESWATCHING } from "../../utils/moviesWatching";
 import { MOVIESCRIMES } from "../../utils/moviesCrimes";
@@ -14,12 +15,10 @@ import { MovieCards } from "../../components/MovieCards";
 const { width } = Dimensions.get('window');
 
 export const Home = ({ navigation }) => {
-
-    const [error, setError] = useState('');
-    const [movie, setMovie] = useState("");
-    const [text, setText] = useState('');
-
-
+    const { moviesWatching } = useContext(WatchingContext);
+    
+    // console.log(moviesWatching);
+        
     var imagem;
     if (width > 412) {
         imagem = bigTrendingMovie;
@@ -33,7 +32,7 @@ export const Home = ({ navigation }) => {
         if (!error) {
             navigation.navigate('MoviePage', movie);
         } else {
-            console.log("Wheel of time nao encontrado!");
+            console.log("Wheel of time naossss encontrado!");
         }
 
     }
@@ -45,6 +44,7 @@ export const Home = ({ navigation }) => {
                     <Image style={styles.PrimeVideoLogoImg} source={PrimeVideoLogo}/> 
                     <Image style={styles.AmazonLogoImg} source={AmazonLogo}/>
                 </View> */}
+
                 <TouchableOpacity style={styles.trendingMovieThumbnail} onPress={() => handleSearch("Wheel of Time")}>
                     <Image 
                         source={imagem} 
@@ -53,17 +53,19 @@ export const Home = ({ navigation }) => {
                     />
                 </TouchableOpacity>
 
-                <Text style={styles.title} >Continue Watching</Text>
+                <Text style={styles.title}>Continue Watching</Text> 
                 <FlatList 
-                    data={MOVIESWATCHING} 
+                    data={moviesWatching} 
                     keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name} />}
+                    renderItem={({item}) => {
+                        return <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>
+                    }}
                     horizontal
                     contentContainerStyle={styles.contentContainerList}
                     showsHorizontalScrollIndicator={false}
                 />
 
-                <Text style={styles.title} >Crime movies</Text>
+                <Text style={styles.title}>Crime movies</Text>
                 <FlatList 
                     data={MOVIESCRIMES} 
                     keyExtractor={(item) => item.id}
@@ -82,26 +84,7 @@ export const Home = ({ navigation }) => {
                     contentContainerStyle={styles.contentContainerList}
                     showsHorizontalScrollIndicator={false}
                 />
-
-                <Text style={styles.title} >Continue Watching</Text>
-                <FlatList 
-                    data={MOVIESWATCHING} 
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name}/>}
-                    horizontal
-                    contentContainerStyle={styles.contentContainerList}
-                    showsHorizontalScrollIndicator={false}
-                />
-
-                <Text style={styles.title} >Continue Watching</Text>
-                <FlatList 
-                    data={MOVIESWATCHING} 
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name}/>}
-                    horizontal
-                    contentContainerStyle={styles.contentContainerList}
-                    showsHorizontalScrollIndicator={false}
-                />
+                
             </ScrollView>
         </View>
     );

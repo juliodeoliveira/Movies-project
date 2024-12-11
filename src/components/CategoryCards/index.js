@@ -2,7 +2,7 @@
 // TODO: Fazer uma lista que contenha todos as categorias e pegar delas e adicionar componente para cada, ou nao ja que tem apenas duas
 
 import { View, StyleSheet, Text, TouchableOpacity, ScrollView } from "react-native";
-
+//TODO: Ainda precisa do gradiente, ou eu crio uma imagem de fundo que tenha esse gradiente, que eu acho q seja melhor ou tento aquela lib dnv
 export const Category = () => {
 
     return (
