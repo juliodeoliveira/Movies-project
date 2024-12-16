@@ -67,7 +67,7 @@ export const Home = ({ navigation }) => {
                 <FlatList 
                     data={MOVIESCRIMES} 
                     keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name}/>}
+                    renderItem={({item}) => <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>}
                     horizontal
                     contentContainerStyle={styles.contentContainerList}
                     showsHorizontalScrollIndicator={false}

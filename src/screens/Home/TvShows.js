@@ -58,7 +58,6 @@ export const TvShows = ({ navigation }) => {
                     showsHorizontalScrollIndicator={false}
                 />
 
-
                 <Text style={styles.title}>Categorias</Text>
                 <Category />
             </View>

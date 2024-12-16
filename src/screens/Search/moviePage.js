@@ -17,6 +17,7 @@ export const MoviePage = ({ route, navigation }) => {
         //! Ta certo que isso aqui parece uma logica fudida de ruim, ainda preciso verificar se existe um valor menor para ser inserido um valor algo tipo if no indice tal é igual a nulo e se sim ele coloca nesse indice
         // mas como esse histórico so fica armazenado enquando o usuario esta dentro do sistema eu nao vejo motivos para trocar a logica
         let newId = String(parseInt(moviesWatching[moviesWatching.length - 1 ].id, 10) + 1);
+
         addMovie({
             id: newId,
             name: Title,
