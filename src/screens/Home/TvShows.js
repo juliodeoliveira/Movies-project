@@ -38,11 +38,11 @@ export const TvShows = ({ navigation }) => {
                 </TouchableOpacity>
 
                 {/* Adicionar aqui uma validacao ou outra logica daquela dos filmes ou até mesmo usar os mesmos filmes */}
-                <Text style={styles.title}>Continuar Assistido</Text>
+                <Text style={styles.title}>Bem avaliados</Text>
                 <FlatList
                     data={TVSHOWSWATCHING}
                     keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name}/>}
+                    renderItem={({item}) => <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>}
                     horizontal
                     contentContainerStyle={styles.contentContainerList}
                     showsHorizontalScrollIndicator={false}
@@ -52,7 +52,7 @@ export const TvShows = ({ navigation }) => {
                 <FlatList
                     data={TVSHOWSPOPULARS}
                     keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MovieCards movieUrl={item.moviesURL} alternative={item.name}/>}
+                    renderItem={({item}) => <MovieCards movieUrl={{uri: item.moviesURL}} alternative={item.name}/>}
                     horizontal
                     contentContainerStyle={styles.contentContainerList}
                     showsHorizontalScrollIndicator={false}
@@ -60,7 +60,6 @@ export const TvShows = ({ navigation }) => {
 
 
                 <Text style={styles.title}>Categorias</Text>
-                
                 <Category />
             </View>
 

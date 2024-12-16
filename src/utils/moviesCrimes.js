@@ -1,19 +1,20 @@
-//TODO: ao usar os nomes para pesquisar na api quando o usuario clicar na imagem
+// Batman: https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg
+// Sherlock Holmes: https://m.media-amazon.com/images/M/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg@@._V1_SX300.jpg
 
 export const MOVIESCRIMES = [
   {
     id: "1",
     name: "Dark Knight",
-    moviesURL: require("../assets/movies/dark-knight.png"),
+    moviesURL: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
   },
   {
     id: "2",
     name: "Sherlock Holmes",
-    moviesURL: require("../assets/movies/sherlock_holmes.png"),
+    moviesURL: "https://m.media-amazon.com/images/M/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg@@._V1_SX300.jpg",
   },
   {
     id: "3",
     name: "Dark Knight",
-    moviesURL: require("../assets/movies/dark-knight.png"),
+    moviesURL: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
   },
 ];

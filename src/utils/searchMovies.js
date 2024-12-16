@@ -7,7 +7,7 @@ export const searchMovie = async (query) => {
     }
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${query}`);
+        const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${query}&plot=full`);
         const data = await response.json()
         if (data.Response === 'True') {
             return { movie: data, error: null }
